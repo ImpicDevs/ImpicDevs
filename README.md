@@ -64,4 +64,15 @@ Happy Coding!!!
 
 Happy Coding!!!
 
- 
+ ## 🆘 Support:
+
+<a href = "https://discord.gg/6sFY5VZaW2">
+  <img src = "https://invidget.switchblade.xyz/6sFY5VZaW2">
+</a>
+
+<h1 align = "center">
+    🙏 Thanks for Visiting
+</h1>
+<p align = "center">
+    Copyright 2024 All Rights Reserved
+</p>
