@@ -1,0 +1,312 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  font-family: "Inter", sans-serif;
+  transition: background-color 0.3s, color 0.3s;
+  cursor: url(./images/cursor.svg), auto;
+}
+html {
+  scroll-behavior: smooth;
+}
+
+::selection {
+  background-color: rgb(209, 125, 15); /* Change to your primary color */
+  color: #ffffff;
+}
+
+/* stylings for theme toggle button */
+
+:root {
+  --bg-color-light: #e0dede; /* Updated light theme color */
+  --bg-color-dark: #000000; /* Updated dark theme color */
+  --text-color-light: #000000; /* Ensure text is visible in light mode */
+  --text-color-dark: #ffffff; /* Ensure text is visible in dark mode */
+}
+
+body.light-theme {
+  background-color: var(--bg-color-light);
+  color: var(--text-color-light);
+  transition: background-color 0.5s ease, color 0.5s ease;
+}
+
+body.dark-theme {
+  background-color: var(--bg-color-dark);
+  color: var(--text-color-dark);
+  transition: background-color 0.5s ease, color 0.5s ease;
+}
+
+/* for "view our discord members button" */
+@keyframes slideAnimation {
+  0% {
+    width: 0;
+  }
+  50% {
+    width: calc(100% + 15px);
+  }
+  100% {
+    width: 0;
+  }
+}
+
+.button_sl {
+  display: block;
+  position: absolute;
+  top: 0;
+  bottom: -1px;
+  left: -8px;
+  width: 0;
+  background-color: #ff4655;
+  transform: skew(-15deg);
+  transition: all 0.2s ease;
+  animation: slideAnimation 3s infinite;
+}
+
+.button:hover .button_sl {
+  animation: none;
+  width: calc(100% + 15px);
+}
+.button {
+  -moz-appearance: none;
+  -webkit-appearance: none;
+  appearance: none;
+  border: none;
+  background: none;
+  color: #0f1923;
+  cursor: pointer;
+  position: relative;
+  padding: 8px;
+  margin-bottom: 20px;
+  text-transform: uppercase;
+  font-weight: bold;
+  font-size: 14px;
+  transition: all 0.15s ease;
+}
+
+.button::before,
+.button::after {
+  content: "";
+  display: block;
+  position: absolute;
+  right: 0;
+  left: 0;
+  height: calc(50% - 5px);
+  border: 1px solid #7d8082;
+  transition: all 0.15s ease;
+}
+
+.button::before {
+  top: 0;
+  border-bottom-width: 0;
+}
+
+.button::after {
+  bottom: 0;
+  border-top-width: 0;
+}
+
+.button:active,
+.button:focus {
+  outline: none;
+}
+
+.button:active::before,
+.button:active::after {
+  right: 3px;
+  left: 3px;
+}
+
+.button:active::before {
+  top: 3px;
+}
+
+.button:active::after {
+  bottom: 3px;
+}
+
+.button_lg {
+  position: relative;
+  display: block;
+  padding: 10px 20px;
+  color: #fff;
+  background-color: #0f1923;
+  overflow: hidden;
+  box-shadow: inset 0px 0px 0px 1px transparent;
+}
+
+.button_lg::before {
+  content: "";
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 2px;
+  height: 2px;
+  background-color: #0f1923;
+}
+
+.button_lg::after {
+  content: "";
+  display: block;
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  width: 4px;
+  height: 4px;
+  background-color: #0f1923;
+  transition: all 0.2s ease;
+}
+
+.button_sl {
+  display: block;
+  position: absolute;
+  top: 0;
+  bottom: -1px;
+  left: -8px;
+  width: 0;
+  background-color: #7d8082;
+  transform: skew(-15deg);
+  transition: all 0.2s ease;
+}
+
+.button_text {
+  position: relative;
+}
+
+.button:hover {
+  color: #0f1923;
+}
+
+.button:hover .button_sl {
+  width: calc(100% + 15px);
+}
+
+.button:hover .button_lg::after {
+  background-color: #fff;
+}
+
+/* for cards */
+.admin-card {
+  border: 2px solid #000000;
+  background-color: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+  color: black;
+}
+
+.admin-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 15px rgba(0, 0, 0, 0.2);
+}
+
+.admin-card img {
+  border: 3px solid #000000;
+}
+.border-primary {
+  border-color: #3333ff; /* Change to your primary color */
+}
+
+.admin-card:hover .absolute {
+  opacity: 0.1;
+}
+
+.admin-label {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background-color: #000000;
+  color: white;
+  padding: 3px 10px;
+  border-radius: 10px;
+  font-size: 0.8rem;
+  font-weight: bold;
+}
+
+/* head card */
+.head-card {
+  position: relative;
+  overflow: hidden;
+  border: 3px solid #000000;
+  background-color: #f0f0f0;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15), 0 0 20px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+.head-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2), 0 0 30px rgba(0, 0, 0, 0.15);
+}
+.head-card img {
+  width: 140px;
+  height: 140px;
+}
+
+/* social links */
+.social-links a {
+  color: #000000;
+  margin: 0 5px;
+  transition: color 0.3s ease;
+}
+.social-links a:hover {
+  color: #3333ff;
+}
+
+/* registration page */
+pre {
+  white-space: pre-wrap;
+  word-wrap: break-word;
+  font-family: "Courier New", Courier, monospace;
+}
+.member-card {
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+.member-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.9);
+}
+.fade-in {
+  animation: fadeIn 0.5s ease-in-out;
+}
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+.hover-scale {
+  transition: transform 0.3s ease-in-out;
+}
+.hover-scale:hover {
+  transform: scale(1.05);
+}
+
+/* project registration */
+.project-card {
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+.project-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.9);
+}
+.fade-in {
+  animation: fadeIn 0.5s ease-in-out;
+}
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+.hover-scale {
+  transition: transform 0.3s ease-in-out;
+}
+.hover-scale:hover {
+  transform: scale(1.05);
+}
